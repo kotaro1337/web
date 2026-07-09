@@ -1,98 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Kotaro#1337</title>
-    <meta name="theme-color" content="#000001">
-    <link rel="stylesheet" href="public/users/css/cat.css">
-    <link rel="icon" href="https://cdn.imagevisit.com/2025/04/24/weed.png" type="image/x-icon">
-    <link rel="shortcut icon" href="https://cdn.imagevisit.com/2025/04/24/weed.png" type="image/x-icon"> 
-    <meta content="4/u" property="og:title" />
-    <meta content="" property="og:image" />
-    <meta content="#000001" data-react-helmet="true" name="theme-color" />
+<meta charset="UTF-8">
+<title>kotaroPh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+#musicBtn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    transition: .3s;
+}
+
+#musicBtn:hover{
+    transform: scale(1.1);
+}
+</style>
+
 </head>
-<script src="anti-tanga.js"></script>
-<script src="effects.js"></script>
-<script src="effects2.js"></script> 
 <body>
 
-    <div id="overlay">
-        <button class="overlaybtn" onclick="removeOverlay()">click to enter</button>
+<div class="noise"></div>
+
+<header class="hero">
+    <center>
+        <h1 id="typing"></h1>
+    </center>
+
+    <p>Student · Gamer · Developer</p>
+
+    <br>
+
+    <a href="https://github.com/kotaro1337" target="_blank" class="social github">
+        <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a href="https://instagram.com/jmesxyz_" target="_blank" class="social discord">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://facebook.com/JamesPatrick2608" target="_blank" class="social twitter">
+        <i class="fa-brands fa-facebook"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@jmesxyz_" target="_blank" class="social linkedin">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+</header>
+
+<main>
+
+<section class="glass">
+    <h2>About</h2>
+    <p>binibira ko lahat ng bobo.</p>
+</section>
+
+<section class="glass">
+    <h2>Organizations</h2>
+
+    <div class="grid">
+        <div>Philippine Hacking University</div>
+        <div>The Nexus Squad</div>
+        <div>FancyBear APT28</div>
+        <div>DefacerPH</div>
+        <div>Revshit</div>
+        <div>Aknem</div>
     </div>
+</section>
 
-    <div id="user-page">
+<section class="glass">
+    <h2>Projects</h2>
+    Coming soon.
+</section>
 
-<img class="background" 
-     src="stray-programming.gif" 
-     draggable="false"
-     style="object-fit: cover; width:100%; height:100%; position:absolute; top: 0; left:0; z-index:-1;">
+<section class="glass danger">
+    <h2>Contact</h2>
 
-        <div class="main-container" id="mainDiv">
+    <p>Feel free to reach out to me via email or social media.</p>
 
-            <div class="profile-container">
-                <img class="pp" src="https://i.ibb.co/v6g2f3d3/f4640c5832304250ec59cec708726af6.png" draggable="false">
-                <p class="username breathing" data-tooltip="uid: 1">Kotaro</p>
+    <ul>
+        <li>Email:
+            <a href="mailto:kotaroph@gmail.com">
+                kotaroph@gmail.com
+            </a>
+        </li>
+    </ul>
+</section>
 
-                <div class="badges-container">
-                    <div class="badges pic-badge" id="prem" data-tooltip="weeds 24/7" style="background-image: url('https://cdn.imagevisit.com/2025/04/24/weed.png');"></div>
-                    <div class="badges pic-badge" id="early" data-tooltip="mabait na tao" style="background-image: url('https://cdn3.emoji.gg/emojis/91869-christ.png');"></div>
-                    <div class="badges pic-badge" id="own" data-tooltip="</>" style="background-image: url('https://discordresources.com/img/boosts/discordboost3.svg');"></div>
-                </div>
+</main>
 
-                <div class="bio-container">
-                    <div class="bio typewriter"></div>
-                </div>
-                <div class="pre-container">
-                    <div class="pre">
-                        <div class="cropped">
-                            <img draggable="false" id="rpc">
-                        </div>
-                    </div>
-                </div>
-                <div class="links-container" id="linksDiv">
+<footer>
+    © 2026 kotaroPh
+</footer>
 
-                    <!-- Discord -->
-                    <div class="logo btc" onclick="window.open('https://discord.gg/nbi', '_blank');">
-                        <img src="pogi/discord.svg" class="links" width="24" />
-                    </div>
+<!-- ================= MUSIC ================= -->
 
-                    <!-- Instagram -->
-                    <div class="logo instagram" onclick="window.open('https://www.instagram.com/jmesxyz_/', '_blank');">
-                        <img src="pogi/instagram.svg" class="links" width="24" />
-                    </div>
+<audio id="bgMusic" loop autoplay>
+    <source src="https://audio.jukehost.co.uk/07UlrYbmsFKmdCmiAXLVXwOawqjzHpK6" type="audio/mpeg">
+</audio>
 
-                    <!-- YouTube -->
-                    <div class="logo youtube" onclick="window.open('https://youtube.com/@Kotaroisnice', '_blank');">
-                        <img src="pogi/youtube.svg" class="links" width="24" />
-                    </div>
+<button id="musicBtn">
+    <i class="fa-solid fa-volume-high"></i>
+</button>
 
-                    <!-- github -->
-                    <div class="logo github" onclick="window.open('https://github.com/kotaro1337', '_blank');">
-                        <img src="pogi/github.svg" class="links" width="24" />
-                    </div>
-                    
-                </div>
+<script src="assets/js/script.js"></script>
 
-                <div class="linksline"></div>
+<script>
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
 
-                <div class="views-container">
-                    <svg viewBox="0 0 24 24" width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 14C3 9.02944 7.02944 5 12 5C16.9706 5 21 9.02944 21 14M17 14C17 16.7614 14.7614 19 12 19C9.23858 19 7 16.7614 7 14C7 11.2386 9.23858 9 12 9C14.7614 9 17 11.2386 17 14Z" stroke="#c18be0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span id="view-count">1337</span>
-                </div>
-            </div>
+music.volume = 0.35;
 
-            <div class="mutebutton">
-                <p id="mutetext" onclick="toggleMusic()">on</p>
-            </div>
-         
 
-        <audio id="backgroundsong" src="https://audio.jukehost.co.uk/07UlrYbmsFKmdCmiAXLVXwOawqjzHpK6" loop></audio>
+music.play().catch(() => {
+    console.log("Autoplay blocked.");
+
+    document.addEventListener("click", () => {
+        music.play();
+    }, { once: true });
+});
+
+
+musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+        music.play();
+        musicBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+    } else {
+        music.pause();
+        musicBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+    }
+});
+</script>
 
 </body>
 </html>
-
-
