@@ -4,412 +4,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#8050bb">
-<title>@jmesxyz</title>
+<title>ahyeah </title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
-
 :root {
-  --purple: #8855c7;
-  --deep: #533080;
-  --lavender: #e8d8ff;
-  --pink: #f7d9ef;
-  --text: #49335d;
-  --muted: #8c78a0;
+  --pink: #f4a5c7;
+  --lavender: #c5b3ef;
+  --purple: #886da8;
+  --ink: #67526f;
+  --paper: #fffdfb;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   min-height: 100vh;
   font-family: 'DM Sans', sans-serif;
-  color: var(--text);
+  color: var(--ink);
   background:
-    radial-gradient(ellipse at 10% 10%, #f9dff4 0%, transparent 35%),
-    radial-gradient(ellipse at 90% 20%, #d9c7ff 0%, transparent 38%),
-    linear-gradient(145deg, #fdf7ff, #eee2ff 48%, #fbe7f6);
+    radial-gradient(ellipse at top left, #ffe0ed, transparent 48%),
+    radial-gradient(ellipse at bottom right, #e6ddff, transparent 45%),
+    #fff5fa;
   overflow-x: hidden;
 }
 
 button {
   font: inherit;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.background-glow {
+.hearts {
   position: fixed;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: #c5a0ff;
-  filter: blur(85px);
-  opacity: .3;
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
-.glow-one {
-  top: -90px;
-  left: -100px;
+.heart {
+  position: absolute;
+  bottom: -35px;
+  color: #d9a8d6;
+  opacity: 0;
+  animation: floatUp linear infinite;
 }
 
-.glow-two {
-  right: -110px;
-  bottom: -80px;
-  background: #ffbce8;
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+  15% { opacity: .6; }
+  85% { opacity: .4; }
+  100% {
+    transform: translateY(-115vh) rotate(35deg);
+    opacity: 0;
+  }
 }
 
-.page {
-  width: 100%;
-  min-height: 100vh;
+.wrapper {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 28px, 760px);
+  margin: 36px auto;
+}
+
+.browser {
+  border: 1px solid #ffffff;
+  border-radius: 23px;
+  overflow: hidden;
+  background: rgba(255,255,255,.55);
+  box-shadow: 0 24px 80px #a58abb25;
+  backdrop-filter: blur(12px);
+  animation: reveal .9s ease both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.browser-bar {
+  min-height: 54px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px 16px;
-}
-
-.panel {
-  width: 100%;
-  max-width: 460px;
-  padding: 30px 23px;
-  border: 1px solid rgba(255,255,255,.8);
-  border-radius: 30px;
-  background: rgba(255,250,255,.78);
-  box-shadow:
-    0 25px 70px rgba(99,59,135,.13),
-    inset 0 1px 0 rgba(255,255,255,.95);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  text-align: center;
-  animation: appear .7s ease both;
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(18px) scale(.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.hidden {
-  display: none !important;
-}
-
-.top-label {
-  display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 8px 13px;
-  border-radius: 50px;
-  background: #f0e4ff;
-  color: #8052b4;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.3px;
-  text-transform: uppercase;
-}
-
-.lock-art {
-  width: 96px;
-  height: 96px;
-  margin: 25px auto 20px;
-  display: grid;
-  place-items: center;
-  border-radius: 32px;
-  color: white;
-  font-size: 38px;
-  background: linear-gradient(145deg, #c09aff, #8855c7 65%, #7040ad);
-  box-shadow: 0 13px 28px rgba(126,75,183,.27);
-  transform: rotate(-5deg);
-  animation: float 3.5s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,100% { transform: translateY(0) rotate(-5deg); }
-  50% { transform: translateY(-7px) rotate(2deg); }
-}
-
-h1, h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: clamp(28px, 7vw, 36px);
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-.subtitle {
-  max-width: 310px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  gap: 13px;
-  margin: 25px 0 23px;
+  padding: 0 17px;
+  border-bottom: 1px solid #f1e2ef;
+  background: #fff9fd;
 }
 
 .dot {
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  border: 1.5px solid #bba1d9;
-  background: transparent;
-  transition: .2s ease;
+  background: #e8bad7;
 }
 
-.dot.filled {
-  background: var(--purple);
-  border-color: var(--purple);
-  box-shadow: 0 0 0 4px #eadcff;
-}
+.dot:nth-child(2) { background: #d4c2ef; }
+.dot:nth-child(3) { background: #f3c6d8; }
 
-.keypad {
-  max-width: 290px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 11px;
-}
-
-.key {
-  min-height: 57px;
-  border: 1px solid rgba(166,127,203,.16);
-  border-radius: 19px;
-  background: rgba(255,255,255,.82);
-  color: var(--deep);
-  font-size: 20px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(93,56,128,.045);
-  transition: transform .15s, background .15s;
-}
-
-.key:active {
-  transform: scale(.94);
-  background: #eee1ff;
-}
-
-.key.utility {
-  color: #936bb9;
-  font-size: 13px;
-}
-
-.error {
-  min-height: 22px;
-  margin-top: 17px;
-  color: #b35d91;
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.footer-note {
-  margin-top: 15px;
-  color: #aa98b9;
-  font-size: 11px;
-  letter-spacing: .5px;
-}
-
-/* LETTER */
-
-.letter-panel {
-  max-width: 520px;
-  padding: 26px 18px;
-  text-align: left;
-}
-
-.letter-heading {
+.browser-title {
+  flex: 1;
   text-align: center;
-  padding: 9px 5px 22px;
-}
-
-.letter-heading .lock-art {
-  width: 76px;
-  height: 76px;
-  border-radius: 25px;
-  font-size: 32px;
-  margin: 20px auto;
-}
-
-.letter-heading h1 {
-  font-size: 32px;
-}
-
-.letter-heading p {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, #dbc6f0, transparent);
-  margin: 0 0 22px;
+  padding-right: 38px;
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: #9979a8;
 }
 
 .letter {
-  padding: 0 5px;
-  font-size: 14px;
-  line-height: 2;
-  color: #624b75;
-  overflow-wrap: anywhere;
+  position: relative;
+  padding: 43px clamp(23px, 7vw, 58px) 35px;
+  background:
+    linear-gradient(#fffdfbfa, #fffdfbfa),
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      #f5eaf1 32px
+    );
 }
 
-.letter p {
-  margin-bottom: 18px;
+.top-deco {
+  text-align: center;
+  margin-bottom: 27px;
+}
+
+.mini-heart {
+  display: block;
+  font-size: 23px;
+  color: #e5a4c8;
+  margin-bottom: 12px;
+  animation: heartbeat 2.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.18); }
+}
+
+.hello {
+  font-family: 'Caveat', cursive;
+  font-size: 29px;
+  color: #ad8ab7;
+  margin: 0 0 3px;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  font-size: clamp(51px, 10vw, 76px);
+  line-height: 1.1;
+  color: #806493;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #b399c0;
+  margin-top: 15px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 28px 0;
+  color: #d9a7cd;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  width: 55px;
+  height: 1px;
+  background: #e9cce1;
+}
+
+.message {
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: .1px;
+  color: #695570;
+}
+
+.message p {
+  margin: 0 0 23px;
+}
+
+.message p:first-child::first-letter {
+  color: #c78bb9;
+}
+
+.signature-area {
+  text-align: right;
+  margin-top: 35px;
+  padding-right: 8px;
+}
+
+.signature-caption {
+  font-size: 12px;
+  color: #a78cb2;
+  margin-bottom: 2px;
 }
 
 .signature {
-  margin-top: 24px;
-  color: #8655b8;
-  font-family: 'Playfair Display', serif;
-  font-size: 23px;
-  font-style: italic;
+  font-family: 'Caveat', cursive;
+  font-size: 37px;
+  color: #9877ad;
 }
 
-
-
-.music-card {
-  margin-top: 27px;
-  padding: 17px;
-  border-radius: 23px;
-  background: linear-gradient(135deg, #f0e4ff, #fff0fa);
-  border: 1px solid rgba(177,141,214,.23);
-}
-
-.music-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.music-icon {
-  width: 45px;
-  height: 45px;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  border-radius: 15px;
-  color: white;
-  font-size: 21px;
-  background: linear-gradient(145deg, #9d70d6, #68409f);
-}
-
-.music-title h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.music-title p {
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.5;
-}
-
-
-.spotify-frame {
-  display: block;
-  width: 100%;
-  height: 152px;
-  border: 0;
-  border-radius: 13px;
-  background: #e8dcf4;
-}
-
-.music-hint {
-  margin-top: 10px;
-  color: #927ca5;
-  font-size: 11px;
-  line-height: 1.6;
+.bottom-note {
   text-align: center;
-}
-
-.actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.action-btn {
-  min-height: 48px;
-  border: 0;
-  border-radius: 16px;
-  padding: 12px 10px;
+  margin-top: 42px;
+  color: #ad90b6;
   font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform .15s;
-}
-
-.action-btn:active {
-  transform: scale(.96);
-}
-
-.primary {
-  color: white;
-  background: linear-gradient(135deg, #a77ae0, #8050bb);
-  box-shadow: 0 8px 18px rgba(119,71,174,.2);
-}
-
-.secondary {
-  color: #8154a8;
-  background: #f0e5ff;
-}
-
-.closing {
-  margin-top: 22px;
-  text-align: center;
-  color: #a38bb7;
-  font-size: 11px;
   line-height: 1.8;
 }
 
-.floaty {
-  position: fixed;
-  left: var(--x);
-  bottom: -35px;
-  color: rgba(136,85,199,.38);
-  font-size: var(--size);
-  pointer-events: none;
-  z-index: 5;
-  animation: rise var(--duration) linear forwards;
+.bottom-note span {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
-@keyframes rise {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-  12% { opacity: .8; }
-  85% { opacity: .7; }
-  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+.footer {
+  text-align: center;
+  padding: 24px 10px;
+  font-family: 'Caveat', cursive;
+  color: #b49abf;
+  font-size: 19px;
 }
 
-.shake {
-  animation: shake .3s ease;
+.side-note {
+  position: absolute;
+  padding: 13px 15px;
+  background: #fff8f8;
+  color: #ac8db9;
+  font-family: 'Caveat', cursive;
+  font-size: 19px;
+  box-shadow: 0 5px 18px #a98bb41c;
+  transform: rotate(-7deg);
 }
 
-@keyframes shake {
-  0%,100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+.note-left {
+  left: -34px;
+  top: 120px;
 }
 
-@media (max-width: 380px) {
-  .panel { padding: 25px 16px; border-radius: 25px; }
-  .key { min-height: 53px; }
-  .letter { font-size: 13px; }
-  .actions { grid-template-columns: 1fr; }
+.note-right {
+  right: -27px;
+  bottom: 190px;
+  transform: rotate(7deg);
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: calc(100% - 20px);
+    margin: 15px auto;
+  }
+
+  .browser {
+    border-radius: 19px;
+  }
+
+  .browser-bar {
+    min-height: 47px;
+    padding: 0 12px;
+  }
+
+  .browser-title {
+    font-size: 17px;
+    padding-right: 25px;
+  }
+
+  .letter {
+    padding: 35px 22px 28px;
+  }
+
+  .top-deco {
+    margin-bottom: 22px;
+  }
+
+  .hello { font-size: 25px; }
+
+  h1 { font-size: 57px; }
+
+  .subtitle {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+  }
+
+  .divider { margin: 24px 0; }
+
+  .message {
+    font-size: 13px;
+    line-height: 1.95;
+  }
+
+  .message p { margin-bottom: 20px; }
+
+  .signature { font-size: 34px; }
+
+  .note-left {
+    left: -4px;
+    top: 6px;
+    font-size: 14px;
+    padding: 7px;
+  }
+
+  .note-right { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -423,256 +344,137 @@ h1 {
 </head>
 
 <body>
-<div class="background-glow glow-one"></div>
-<div class="background-glow glow-two"></div>
 
-<!-- Actual background music from JukeHost -->
-<audio id="backgroundMusic" preload="auto" loop>
-  <source src="https://audio.jukehost.co.uk/01a123a9-1bd7-705f-b240-1ee0b8cecf72" type="audio/mpeg">
-</audio>
+<div class="hearts" id="hearts"></div>
 
-<main class="page">
-  <section class="panel" id="lockScreen">
-    <div class="top-label">ano kaya toh???</div>
+<main class="wrapper">
 
-    <div class="lock-art">♡</div>
+  <div class="side-note note-left">
+    you are special ♡
+  </div>
 
-    <h1>hey ,Vennice</h1>
-    <p class="subtitle">
-      huluan mo muna pass nyaknyak
-    </p>
+  <div class="browser">
 
-    <div class="dots" id="dots" aria-label="Password progress">
+    <header class="browser-bar">
       <span class="dot"></span>
       <span class="dot"></span>
       <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
+      <div class="browser-title">
+       ahyeah ehey
+      </div>
+    </header>
 
-    <div class="keypad">
-      <button class="key" onclick="pressKey('1')">1</button>
-      <button class="key" onclick="pressKey('2')">2</button>
-      <button class="key" onclick="pressKey('3')">3</button>
-      <button class="key" onclick="pressKey('4')">4</button>
-      <button class="key" onclick="pressKey('5')">5</button>
-      <button class="key" onclick="pressKey('6')">6</button>
-      <button class="key" onclick="pressKey('7')">7</button>
-      <button class="key" onclick="pressKey('8')">8</button>
-      <button class="key" onclick="pressKey('9')">9</button>
-      <button class="key utility" onclick="clearCode()">CLEAR</button>
-      <button class="key" onclick="pressKey('0')">0</button>
-      <button class="key utility" onclick="deleteDigit()">⌫</button>
-    </div>
+    <article class="letter">
 
-    <p class="error" id="errorMessage" aria-live="polite"></p>
-    <p class="footer-note">try to guess the password uhm</p>
-  </section>
-
-  <section class="panel letter-panel hidden" id="letterScreen">
-    <div class="letter-heading">
-      <div class="top-label">wao na-open mo ha</div>
-      <div class="lock-art">♡</div>
-      <h1>scroll down ka boss sa baba</h1>
-      <p>Take your time reading this.<br>mwa mwa</p>
-    </div>
-
-    <div class="divider"></div>
-
-    <article class="letter" id="apologyMessage">
-      <p>sana ma-enjoy mo ’to, simple gift lang or bigay ko sa’yo HAHAHAHA. ginawa ko ’tong website nung sabado at linggo, nung mga araw na hindi tayo nag-uusap. gusto ko lang gumawa ng something special para sa’yo at kahit sa simpleng paraan, maipakita ko kung gaano ako ka-sincere sa’yo.</p>
-
-      <p>sorry kung ganito lang ako minsan, at kung minsan ganito lang yung kaya kong ibigay. sorry kung makulit ako, kung masyado akong clingy, at kung minsan sobra-sobra ako sa pagpapakita ng nararamdaman ko. sorry kung hindi ko palaging naibibigay yung best ko para sa’yo, kahit gusto ko namang gawin yung lahat ng makakaya ko para mapasaya ka. sorry kung may mga pagkakataong napaparamdam ko sa’yo na option ka lang, kasi hindi mo deserve maramdaman ’yon, lalo na galing sa’kin.</p>
-
-      <p>sorry rin kung minsan hindi ko alam kung paano ayusin yung mga bagay-bagay, kung nauunahan ako ng selos, takot, at overthinking ko. sorry kung may mga pagkakataong hindi ko agad naiintindihan yung side mo. i'm still learning how to handle my feelings better, and alam kong hindi sapat yung sorry lang kung hindi ko naman ipapakita sa actions ko na gusto kong magbago.</p>
-
-      <p>gusto ko lang malaman mo na genuine lahat ng nararamdaman ko para sa’yo. hindi man ako perfect, hindi man ako palaging tama, at hindi man ako marunong ayusin lahat ng bagay, gusto ko pa ring magpatuloy na matuto. gusto kong matutunan kung paano ka mas maiintindihan, kung paano kita mas mapapakinggan, at kung paano ko maipaparamdam sa’yo na importante ka sa’kin. i'm sorry kung minsan napapagod ka rin sa ugali ko, sa pagiging makulit ko, at sa mga pagkukulang ko.</p>
-
-      <p>pasensya na kung marami pa akong kailangang matutunan. sana makita mo rin na sinusubukan ko naman. hindi ko man kayang maging perfect, gusto kong maging better, hindi lang para sa’yo kundi para rin sa sarili ko. i'm sorry sa lahat ng pagkakataong nasaktan kita, kahit hindi ko intensyon na maramdaman mong kulang ka o hindi ka importante sa’kin. you deserve to feel appreciated, understood, and cared for, and i'm sorry kung may times na hindi ko naiparamdam sa’yo ’yon.</p>
-
-      <p>i care about you so much, vennice. i hope na kahit sa mga panahong nagkukulang ako, makita mo pa rin na sincere ako sa nararamdaman ko. hindi ko hinihingi na intindihin mo lahat ng pagkakamali ko, kasi alam kong may sarili ka ring nararamdaman at napapagod ka rin. gusto ko lang bumawi, matuto sa mga mali ko, at ipakita sa’yo through my actions na kaya kong maging mas maayos.</p>
-
-      <p>sorry talaga, vennice. i'm sorry kung minsan mahirap akong intindihin, kung minsan sobra ako sa pagpapakita ng feelings ko, at kung minsan nakakalimutan kong isipin kung ano rin yung nararamdaman mo. i'll try my best to do better, to listen more, and to understand you instead of letting my emotions control me. sana mapag-usapan natin lahat nang maayos, i'm really sorry</p>
-
-      <p>sorry na talaga, boss amo HAHAHAHAHA. sana magustuhan mo ’tong simpleng gift ko sa’yo. pinaglaanan ko ’to ng oras kasi gusto kong may maibigay sa’yo na galing talaga sa puso ko. make-up pan moko gamit ’tong absidy oat na bigay ko sa’yo ah AHAHAHAHA. ily, boss amo.</p>
-
-      <div class="signature">bati napo ha, omki? </div>
-    </article>
-
-    <section class="music-card">
-      <div class="music-title">
-        <div class="music-icon">♫</div>
-        <div>
-          <h2>A little song for you</h2>
-          <p>I hope this song says what I can't always explain.</p>
+      <header class="top-deco">
+        <span class="mini-heart">♥</span>
+        <p class="hello"</p>
+        <h1>Vennice ♡</h1>
+        <div class="subtitle">
+          whatever basahin mo nalang
         </div>
+      </header>
+
+      <div class="divider">♡</div>
+
+      <section class="message">
+
+        <p>
+          Helooo Vennice!! Thank you sa one month ng tampuhan,
+          kulitan, and everything in between. I'm really glad na
+          nakilala kita, and I just want you to know na I still want
+          to keep my promise to you, and I genuinely mean it.
+          Kahit medyo avoidant ka minsan HAHAHAHAHA, I still
+          appreciate you so much and I really love your personality,
+          pero sana wag laging mataray ha. ♡
+        </p>
+
+        <p>
+          This is just a simple appreciation gift for you. Siguro
+          yk naman na kasi I'm so madaldal, and I just want to show
+          you how thankful I am na naging part ka ng days ko.
+          I appreciate even the little things about you, and honestly,
+          talking to you and spending time with you makes me happy
+          more than you know.
+        </p>
+
+        <p>
+          Sana if ever may problema tayo, pag-usapan at ayusin natin
+          together instead of giving silent treatment. I want us to
+          understand each other better and be comfortable enough to
+          communicate kahit may misunderstandings tayo. I know
+          hindi naman palaging magiging okay ang lahat, pero I hope
+          we can always work things out instead of giving up or
+          avoiding each other.
+        </p>
+
+        <p>
+          I'm willing to understand you more and learn along the way
+          kasi I really want to keep you in my life. Thank you for
+          being you, for the kulitan, and for all the little moments
+          we've shared. I'm really happy na nakilala kita, and I hope
+          we get to make more memories together.
+        </p>
+
+        <p>
+          I appreciate you more than I can explain, and I love you
+          so much, Vennice!!
+        </p>
+      </section>
+
+      <div class="signature-area">
+        <div class="signature-caption">with lots of love,</div>
+        <div class="signature">always, ♡</div>
       </div>
 
-      <!-- Spotify is only for the visual design; JukeHost plays the music. -->
-      <iframe
-        class="spotify-frame"
-        title="Spotify song design"
-        src="https://open.spotify.com/embed/track/2ZbbVF3iQnxmHxyDDnfAmF?theme=0"
-        width="100%"
-        height="152"
-        allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy">
-      </iframe>
+      <div class="bottom-note">
+        <span>♡ ───── ♡ ───── ♡</span>
+      
+        <br>
+      
+      </div>
 
-      <p class="music-hint" id="musicHint">
-        Your song is playing in the background. If it doesn't start, tap the button below.
-      </p>
+    </article>
+  </div>
+<br>
+<br>
+  <div class="side-note note-right">
+    so glad you exist ♡
+  </div>
 
-      <button
-        class="action-btn primary"
-        id="musicButton"
-        onclick="playMusic()"
-        style="width:100%; margin-top:12px;">
-        Play my song
-      </button>
-    </section>
+  <footer class="footer">
+    made with love by James Frias ♡
+  </footer>
 
-    <div class="actions">
-      <button class="action-btn primary" onclick="sendHearts()">Send some love</button>
-      <button class="action-btn secondary" onclick="copyApology()">Copy my letter</button>
-    </div>
-
-
-  </section>
 </main>
 
 <script>
-const PASSCODE = "050220";
-let enteredCode = "";
-let opened = false;
+const hearts = document.getElementById('hearts');
+const symbols = ['♡', '♥', '✧', '୨୧'];
 
-const lockScreen = document.getElementById("lockScreen");
-const letterScreen = document.getElementById("letterScreen");
-const errorMessage = document.getElementById("errorMessage");
-const music = document.getElementById("backgroundMusic");
-const musicHint = document.getElementById("musicHint");
-const musicButton = document.getElementById("musicButton");
+function createHeart() {
+  const heart = document.createElement('span');
+  heart.className = 'heart';
+  heart.textContent = symbols[
+    Math.floor(Math.random() * symbols.length)
+  ];
 
-function updateDots() {
-  document.querySelectorAll(".dot").forEach((dot, index) => {
-    dot.classList.toggle("filled", index < enteredCode.length);
-  });
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (12 + Math.random() * 17) + 'px';
+  heart.style.animationDuration = (9 + Math.random() * 9) + 's';
+  heart.style.animationDelay = Math.random() * 2 + 's';
+
+  hearts.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 20000);
 }
 
-function pressKey(number) {
-  if (opened || enteredCode.length >= 6) return;
-
-  enteredCode += number;
-  updateDots();
-  errorMessage.textContent = "";
-
-  if (enteredCode.length === 6) {
-    if (enteredCode === PASSCODE) {
-      openLetter();
-    } else {
-      errorMessage.textContent = "baby naman, basic lang yan :(";
-      lockScreen.classList.remove("shake");
-      void lockScreen.offsetWidth;
-      lockScreen.classList.add("shake");
-
-      setTimeout(() => {
-        enteredCode = "";
-        updateDots();
-      }, 650);
-    }
-  }
+for (let i = 0; i < 12; i++) {
+  setTimeout(createHeart, i * 400);
 }
 
-function deleteDigit() {
-  if (opened) return;
-  enteredCode = enteredCode.slice(0, -1);
-  updateDots();
-  errorMessage.textContent = "";
-}
-
-function clearCode() {
-  if (opened) return;
-  enteredCode = "";
-  updateDots();
-  errorMessage.textContent = "";
-}
-
-function openLetter() {
-  opened = true;
-
-  lockScreen.classList.add("hidden");
-  letterScreen.classList.remove("hidden");
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
-  // Start JukeHost audio after the correct passcode.
-  music.volume = 0.65;
-  playMusic();
-
-  createFloatingSymbols(18);
-}
-
-async function playMusic() {
-  try {
-    await music.play();
-    musicHint.textContent = "Your song is playing in the background.";
-    musicButton.textContent = "Play again";
-  } catch (error) {
-    musicHint.textContent =
-      "The browser blocked autoplay. Tap Play my song to start the music.";
-    musicButton.textContent = "Play my song";
-  }
-}
-
-function createFloatingSymbols(amount = 8) {
-  const symbols = ["♡", "✦", "✧", "♥", "❀"];
-
-  for (let i = 0; i < amount; i++) {
-    const item = document.createElement("span");
-    item.className = "floaty";
-    item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-    item.style.setProperty("--x", Math.random() * 100 + "vw");
-    item.style.setProperty("--size", (14 + Math.random() * 18) + "px");
-    item.style.setProperty("--duration", (4 + Math.random() * 4) + "s");
-    document.body.appendChild(item);
-
-    item.addEventListener("animationend", () => item.remove());
-  }
-}
-
-function sendHearts() {
-  createFloatingSymbols(24);
-}
-
-async function copyApology() {
-  const letter = document.getElementById("apologyMessage").innerText;
-
-  try {
-    await navigator.clipboard.writeText(letter);
-    alert("Letter copied. You can save it anywhere.");
-  } catch (error) {
-    const textArea = document.createElement("textarea");
-    textArea.value = letter;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
-    alert("Letter copied.");
-  }
-}
-
-document.addEventListener("keydown", (event) => {
-  if (opened) return;
-
-  if (/^[0-9]$/.test(event.key)) {
-    pressKey(event.key);
-  } else if (event.key === "Backspace") {
-    deleteDigit();
-  } else if (event.key === "Escape") {
-    clearCode();
-  }
-});
+setInterval(createHeart, 1300);
 </script>
+
 </body>
 </html>
